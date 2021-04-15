@@ -26,9 +26,10 @@ start_alien(){
 		xdotool click 1
 		sleep 20
 	fi
+	sleep 60
 	xdotool mousemove 912 353
 	xdotool click 1
-	sleep 60
+	sleep 10
 	counter=0
 }
 
