@@ -1,4 +1,27 @@
 counter=0
+gmailLogin=true
+start_alien(){
+	killall chrome
+	sleep 20
+	setsid chromium-browser play.alienworlds.io &
+	sleep 30
+	##Click login
+	xdotool mousemove 710 510
+	xdotool click 1
+	sleep 20
+	##Click login button popup
+	xdotool mousemove 303 282
+	xdotool click 1
+	sleep 20
+	if [ "$gmailLogin" = true ]; then
+		xdotool mousemove 240 189
+		xdotool click 1
+		sleep 20
+	fi
+	counter=0
+}
+
+start_alien
 while [ true ]
 do
 	##Start mine
@@ -32,13 +55,7 @@ do
 	counter=$[$counter+1]
 	if [ "$counter" -gt 520 ]; then
 		echo "Refreshing"
-		xdotool key F5
-		sleep 60
-		xdotool mousemove 707 507
-		xdotool click 1
-		sleep 30
-		xdotool mousemove 907 356
-		xdotool click 1
-		counter=0
+		start_alien
 	fi
 done
+
