@@ -1,6 +1,7 @@
 counter=0
-gmailLogin=true
+gmailLogin=false
 start_alien(){
+	echo "Closing open chrome windows"
 	killall chrome
 	sleep 20
 	setsid chromium-browser play.alienworlds.io &
@@ -15,6 +16,13 @@ start_alien(){
 	sleep 20
 	if [ "$gmailLogin" = true ]; then
 		xdotool mousemove 240 189
+		xdotool click 1
+		sleep 20
+	else
+		xdotool mousemove 290 344
+		xdotool click 1
+		sleep 20
+		xdotool mousemove 159 618
 		xdotool click 1
 		sleep 20
 	fi
