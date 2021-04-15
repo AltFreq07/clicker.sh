@@ -1,5 +1,5 @@
 counter=0
-gmailLogin=false
+gmailLogin=true
 start_alien(){
 	echo "Closing open chrome windows"
 	killall chrome
@@ -28,7 +28,7 @@ start_alien(){
 	fi
 	xdotool mousemove 912 353
 	xdotool click 1
-	sleep 10
+	sleep 60
 	counter=0
 }
 
