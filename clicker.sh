@@ -30,7 +30,7 @@ do
 	xdotool click 1
 	sleep 1
 	counter=$[$counter+1]
-	if [ "$counter" -gt 5 ]; then
+	if [ "$counter" -gt 520 ]; then
 		echo "Refreshing"
 		xdotool key F5
 		sleep 60
